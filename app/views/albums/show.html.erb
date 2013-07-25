@@ -1,0 +1,30 @@
+<div><%= @album.title %></div>
+
+<%= link_to 'back', albums_path %>
+
+
+
+
+
+<div class="fotos">
+
+  <%= render 'fotos/form', a: @album %>
+
+
+  <% @album.fotos.order('id desc').each do |foto| %>
+
+      <div class="foto">
+
+        <div class='foto-image'>
+          <%= image_tag @foto.image.url(:medium) %>
+        </div>
+
+        <div class="foto-options">
+          <span><%= link_to 'delete', foto_path(foto), method: :delete, confirm: 'are u sure?' %> </span>
+        </div>
+
+      </div>
+
+  <% end %>
+
+</div>

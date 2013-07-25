@@ -1,0 +1,8 @@
+<%= simple_form_for Foto.new(album_id: a.id), html: { class: "form-inline" } do |f| %>
+
+    <%= f.input :album_id, as: :hidden %>
+    <%= f.input_field :title, placeholder: 'your title goes here' %>
+    <%= f.input_field :image %>
+    <%= f.submit 'add', class: 'btn' %>
+
+<% end %>

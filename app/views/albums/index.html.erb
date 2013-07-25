@@ -1,0 +1,10 @@
+<h1>Fotoalbums</h1>
+
+<% @albums.each do |album| %>
+    <div class="album">
+        <span class="title"><%= link_to album.title, album %></span>
+        <span class="options"><%= link_to 'edit', edit_album_path(album) %></span><span></span>
+        <span class='options'><%= link_to 'delete', album_path(album), method: :delete, notice: 'are you sure? all including fotos will be deleted as well' %></span><span></span>
+        <div class="time"><%= album.created_at.strftime("created at %d.%m.%Y") %></div>
+    </div>
+<% end %>
